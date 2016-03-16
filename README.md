@@ -1,5 +1,7 @@
 # DBpedia Lookup
 
+[![Build Status](https://travis-ci.org/dbpedia/lookup.svg?branch=master)](https://travis-ci.org/dbpedia/lookup)
+
 DBpedia Lookup is a web service that can be used to look up DBpedia URIs by related keywords. Related means that either the label of a resource matches, or an anchor text that was frequently used in Wikipedia to refer to a specific resource matches (for example the resource http://dbpedia.org/resource/United_States can be looked up by the string "USA"). The results are ranked by the number of inlinks pointing from other Wikipedia pages at a result page.
 
 ## Web APIs
@@ -52,12 +54,30 @@ DBpedia Lookup depends on the core of the DBpedia extraction framework, which is
 
 ### Download and configure the index
 
-    wget http://spotlight.dbpedia.org/download/dbpedia-lookup-index-3.8.tgz
-    tar xzvf dbpedia-lookup-index-3.8.tgz
+You can get our indexes from [SourceForge](https://sourceforge.net/projects/dbpedia-lookup/files/index/)
 
 ### Run the server
 
-    ./run Server dbpedia-lookup-index-3.8
+    
+    `./run Server dbpedia-lookup-index/[LANGUAGE]/[VERSION]/core-i18n`
+   
+   E.g:
+    
+    `./run Server dbpedia-lookup-index/current/en/core-i18n`
+    
+    
+#### Available versions: 
+    
+* current - from Latest DBpedia Dump
+
+Archive: 2015-04, 3.9 and 3.8 
+    
+    
+#### Available languages (i18n working in progress): 
+    
+* en - English
+    
+    
 
 The server should now be running at http://localhost:1111
 
