@@ -54,16 +54,16 @@ DBpedia Lookup depends on the core of the DBpedia extraction framework, which is
 
 ### Download and configure the index
 
-You can get our indexes from [SourceForge](https://sourceforge.net/projects/dbpedia-lookup/files/index/)
+You can get our indexes from [Dropbox](https://www.dropbox.com/sh/x338n4le2svy2jb/AAAY8_DTZj-Y7Mku29oVhiDla?dl=0)
 
 ### Run the server
 
     
-    `./run Server dbpedia-lookup-index/[LANGUAGE]/[VERSION]/core-i18n`
+    `./run Server [PATH TO THE INDEX]/[VERSION]/`
    
    E.g:
     
-    `./run Server dbpedia-lookup-index/current/en/core-i18n`
+    `./run Server /opt/dbpedia-lookup/2015-04`
     
     
 #### Available versions: 
@@ -88,7 +88,7 @@ Rebuilding an index is usually not required, if you only intend on running a loc
 To re-build the index you will require
 
 * DBpedia datasets
-* pignlproc output from [nerd-stats.pig](https://github.com/dbpedia-spotlight/pignlproc/blob/master/examples/nerd-stats/nerd-stats.pig)
+* [Wikistatsextractor output](http://spotlight.sztaki.hu/downloads/latest_data/) - [wikistatsextractor](https://github.com/jodaiber/wikistatsextractor) is a drop-in replacement of [pignlproc](https://github.com/dbpedia-spotlight/pignlproc)
 * Unix
 
 
@@ -120,9 +120,9 @@ The indexer has to be run twice:
 
         ./run Indexer lookup_index_dir redirects_en.nt all_dbpedia_data.nt
 
-2. with the pignlproc data
+2. with the wikistatsextractor data
 
-        ./run Indexer lookup_index_dir redirects_en.nt nerd_stats_output.tsv
+        ./run Indexer lookup_index_dir redirects_en.nt pairCounts
 
 ## Support and feedback
 
@@ -133,6 +133,4 @@ The [DBpedia wiki](http://wiki.dbpedia.org/lookup/) also has useful information 
 ## Maintainers
 
 * Pablo Mendes [@pablomendes](https://github.com/pablomendes)
-* Max Jakob [@maxjakob](https://github.com/maxjakob)
 * Matt Haynes [@matth](https://github.com/matth)
-
