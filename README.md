@@ -38,14 +38,6 @@ By default all data is returned as XML, the service also retuns JSON to any requ
 
 ## Running a local mirror of the webservice
 
-### Clone and build the DBpedia extraction framework
-DBpedia Lookup depends on the core of the DBpedia extraction framework, which is not available in a public Maven repo at the moment. Java 7 is required to compile it.
-    
-    git clone git://github.com/dbpedia/extraction-framework.git
-    cd extraction-framework
-    git checkout DBpedia_3.8
-    mvn clean install
-
 ### Clone and build DBpedia Lookup
 
     git clone git://github.com/dbpedia/lookup.git
@@ -64,7 +56,8 @@ You can get our indexes from [Dropbox](https://www.dropbox.com/sh/x338n4le2svy2j
    E.g:
     
     `./run Server /opt/dbpedia-lookup/2015-04`
-    
+
+**Note: The index file must be decompressed**
     
 #### Available versions: 
     
@@ -93,7 +86,7 @@ To re-build the index you will require
 
 
 ### Get the following DBpedia datasets
-from http://downloads.dbpedia.org/current/en/
+from http://downloads.dbpedia.org/2015-04/core-i18n/en/
 
 * redirects\_en.nt
 * short\_abstracts\_en.nt
@@ -132,5 +125,7 @@ The [DBpedia wiki](http://wiki.dbpedia.org/lookup/) also has useful information 
 
 ## Maintainers
 
-* Pablo Mendes [@pablomendes](https://github.com/pablomendes)
-* Matt Haynes [@matth](https://github.com/matth)
+* Kunal Jha [@Kunal-Jha](https://github.com/Kunal-Jha)
+* Sandro Coelho [@sandroacoelho](https://github.com/sandroacoelho)
+* Pablo Mendes [@pablomendes](https://github.com/pablomendes) (less active)
+* Matt Haynes [@matth](https://github.com/matth) (less active)
